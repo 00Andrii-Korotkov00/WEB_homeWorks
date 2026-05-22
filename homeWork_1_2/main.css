@@ -170,6 +170,22 @@
     gap: 8px;
 }
 
+.item-name {
+    font-size: 18px;
+    width: 120px; 
+    cursor: pointer; 
+}
+
+.item-name-edit {
+    font-size: 18px;
+    width: 120px;
+    padding: 2px 5px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
 .btn-minus, .btn-plus {
     width: 32px;
     height: 32px;
