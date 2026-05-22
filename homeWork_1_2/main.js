@@ -1,8 +1,16 @@
-let items = [
-    { name: 'Помідори', amount: 1, isBought: false },
-    { name: 'Печиво', amount: 1, isBought: false },
-    { name: 'Сир', amount: 1, isBought: false }
-];
+const savedItems = localStorage.getItem('myBuyList');
+
+let items;
+
+if (savedItems) {
+    items = JSON.parse(savedItems);
+} else {
+    items = [
+        { name: 'Помідори', amount: 1, isBought: false },
+        { name: 'Печиво', amount: 1, isBought: false },
+        { name: 'Сир', amount: 1, isBought: false }
+    ];
+}
 
 const itemsList = document.getElementById('items-list');
 
@@ -54,6 +62,8 @@ function renderItems() {
     itemsList.innerHTML = html;
 
     renderStats();
+
+    localStorage.setItem('myBuyList', JSON.stringify(items));
 }
 
 const productInput = document.getElementById('product-input');
